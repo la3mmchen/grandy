@@ -47,3 +47,21 @@ run-func:
 	@echo "\n____________________________"
 	@./${EXECUTABLE} --file challenge/logs.csv --limit 1 --field message stats --urlpath login
 	@echo "\n____________________________"
+
+#
+# *** tests ****
+#
+.PHONY: tests
+tests: unit-tests app-tests
+
+.PHONY: unit-tests
+unit-tests:
+	@go test -cover -failfast -short "./.../types"
+	@echo "\n____________________________"
+	@go test -cover -failfast -short "./.../app"
+	@echo "\n____________________________"
+
+.PHONY: app-tests
+app-tests:
+	@go test -cover -parallel 1 -failfast -short "."
+	@echo "\n____________________________"
