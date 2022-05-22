@@ -3,9 +3,10 @@ on:
   push:
     branches:
       - main
+      - develop
       - 'releases/**'
     tags:
-      - v1.*
+      - '*'
 
 env:
   GO_VERSION: 1.18.1
