@@ -29,6 +29,7 @@ jobs:
       - name: make magic
         run: |
           make go-mod
+          make build
           make run
   go-build:
     name: build
