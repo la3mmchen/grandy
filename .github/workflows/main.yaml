@@ -30,7 +30,7 @@ jobs:
         run: |
           make go-mod
           make build
-          make run
+          make app-tests
   go-build:
     name: build
     needs:

@@ -63,5 +63,5 @@ unit-tests:
 
 .PHONY: app-tests
 app-tests:
-	@go test -cover -parallel 1 -failfast -short "."
+	@./${EXECUTABLE} --file data/example.log --limit 0 --field message stats --urlpath login
 	@echo "\n____________________________"
